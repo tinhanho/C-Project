@@ -107,7 +107,7 @@ namespace Project
                         END";
 
                     SqlCommand cmd = new SqlCommand(mycmd, cn);
-                    cmd.Parameters.AddWithValue("@Name", nickname.Substring(0, 10));
+                    cmd.Parameters.AddWithValue("@Name", nickname);
                     cmd.Parameters.AddWithValue("@Score", playerScore);
 
 

@@ -61,7 +61,7 @@ namespace Project
             Debug.Write(password);
             Debug.Write(GameValue);
 
-            if (password == "70317031" && PlayerName != "")
+            if (password == "70317031" && PlayerName != "" && GameValue == "1")
             {
 
                 string mycmd = "DELETE FROM Game1 WHERE Name=@PlayerName";
@@ -71,7 +71,16 @@ namespace Project
                 
                 return "response succesful";
             }
+            else if (password == "70317031" && PlayerName != "" && GameValue == "2")
+            {
 
+                string mycmd = "DELETE FROM Game2 WHERE Name=@PlayerName";
+                SqlCommand cmd = new SqlCommand(mycmd, cn);
+                cmd.Parameters.AddWithValue("@PlayerName", PlayerName);
+                cmd.ExecuteNonQuery();
+
+                return "response succesful";
+            }
             else if (password == "70317031" && GameValue == "1")
             {
 
